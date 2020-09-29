@@ -59,7 +59,7 @@
 
     <div class="home-function2">
       <van-grid :border="false" :column-num="3">
-        <van-grid-item>
+        <van-grid-item @click="gotoPage('introduce')">
           <img src="../assets/icon11.png" alt="" />
           <p>医院介绍</p>
         </van-grid-item>
@@ -73,7 +73,7 @@
         </van-grid-item>
         <van-grid-item>
           <img src="../assets/icon10.png" alt="" />
-          <p class="ell" >医院特色介绍</p>
+          <p class="ell">医院特色介绍</p>
         </van-grid-item>
       </van-grid>
     </div>
@@ -91,7 +91,11 @@ export default {
       images: [banner1, banner3],
     };
   },
-  methods: {},
+  methods: {
+    gotoPage(name) {
+      this.$router.push({ name });
+    },
+  },
 };
 </script>
 
@@ -155,7 +159,8 @@ export default {
     margin: 30px 0px 15px 19px;
   }
 
-  .home-function, .home-function2 {
+  .home-function,
+  .home-function2 {
     margin: 10px 18px;
     width: 90%;
     background-color: #fff;

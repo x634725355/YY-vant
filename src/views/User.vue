@@ -5,7 +5,7 @@
       <img src="../assets/bg.png" alt="" />
       <div class="userInfo">
         <img src="../assets/avatar.png" alt="" />
-        <span>一点心动</span>
+        <span style="margin-left: 10px">一点心动</span>
       </div>
     </div>
 
