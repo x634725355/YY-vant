@@ -14,31 +14,15 @@
         :main-active-index.sync="active"
       >
         <template slot="content">
-          <div v-for="(dept,deptsindex) of depts" :key="deptsindex">
+          <div v-for="(dept, deptsindex) of depts" :key="deptsindex">
             <div v-if="active === deptsindex">
-              <!-- <div v-for="(sub,index) of dept.departList" :key="index">
-                <van-cell-group>
-                  <van-cell
-                    :title="sub.name"
-                    :key="index"
-                    is-link
-                    center
-                    @click="gotoIntro(sub.id)"
-                  >
-                    <template slot="right-icon">
-                      <van-icon name="arrow" @click.stop="gotoIntro" />
-                    </template>
-                  </van-cell>
-                </van-cell-group>
-              </div>-->
               <div class="department mt20rem">
                 <div
                   class="mHrem tc department-item"
-                  v-for="(sub,index) of dept.departList"
-                  :key="index"
+                  v-for="(sub, index) of dept.doctorList"
+                  :key="sub.name"
                 >
-                  <!--  :class="sub.haveScheduling * 1 ? '' : 'extend-click color-l'" -->
-                  <div >
+                  <div>
                     <div>
                       <van-image
                         width="2.1875rem"
@@ -47,7 +31,7 @@
                         fit="scale-down"
                       />
                     </div>
-                    <p class="f12">{{sub.name}}</p>
+                    <p class="f12">{{ sub.name }}</p>
                   </div>
                 </div>
               </div>
@@ -60,26 +44,48 @@
 </template>
 <script>
 import personal from "../../store/personal";
-import defult_img from "../../assets/img/hos/deptRed.jpg";
 import { myMixin } from "../../utils/mixins/mixin";
+import avatar from "../../assets/avatar.png";
 
 export default {
   mixins: [myMixin],
   data() {
     return {
       value: "",
-      depts: [],
+      depts: [
+        {
+          departmentName: "脑科",
+          doctorList: [
+            {
+              name: "王医生",
+              title: "儿科专家",
+              praise: 100,
+              consulted: 100002,
+              nowHospital: "中华中心医院",
+              img: "",
+            },
+          ],
+        },
+        {
+          departmentName: "儿科",
+          doctorList: [
+            {
+              name: "王医生",
+              title: "儿科专家",
+              praise: 100,
+              consulted: 100002,
+              nowHospital: "中华中心医院",
+            },
+          ],
+        },
+      ],
       active: 0,
-      collection: [],
-      defultimg: defult_img,
+      defultimg: avatar,
     };
   },
-  created() {
-  },
+  created() {},
 
-  methods: {
-
-  },
+  methods: {},
 };
 </script>
 
