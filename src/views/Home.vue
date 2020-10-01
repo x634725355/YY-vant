@@ -8,7 +8,7 @@
     </van-swipe>
 
     <div class="home-middle">
-      <div class="middle-left">
+      <div class="middle-left" @click="gotoPage('reservation')" >
         <img class="icon" src="../assets/icon1.png" alt="" />
         <div>
           <p>预约挂号</p>
