@@ -18,8 +18,9 @@
             <div v-if="active === deptsindex">
               <div
                 class="department"
-                v-for="(sub, index) of dept.doctorList"
+                v-for="sub of dept.doctorList"
                 :key="sub.name"
+                @click="gotoPage('doctorIntroduction')"
               >
                 <div class="department-item">
                   <div class="department-left">
@@ -52,6 +53,9 @@
                   <van-button round type="info">立即咨询</van-button>
                 </div>
               </div>
+
+
+              
             </div>
           </div>
         </template>
@@ -102,7 +106,11 @@ export default {
   },
   created() {},
 
-  methods: {},
+  methods: {
+    gotoPage(name) {
+      this.$router.push({ name });
+    },
+  },
 };
 </script>
 
@@ -121,6 +129,9 @@ export default {
 
 .van-cell__value {
   flex: 0.2;
+}
+.van-tree-select__nav {
+  flex: none;
 }
 
 .van-tree-select__content {

@@ -59,6 +59,14 @@ const routes = [
       title: '预约挂号',
     },
     component: () => import(/* webpackChunkName: "about" */ '../views/hosHome/Reservation.vue')
+  },
+  {
+    path: '/doctorIntroduction',
+    name: 'doctorIntroduction',
+    meta: {
+      title: '预约挂号',
+    },
+    component: () => import(/* webpackChunkName: "about" */ '../views/hosHome/DoctorIntroduction.vue')
   }
 ]
 
