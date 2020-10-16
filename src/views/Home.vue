@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <button></button>
     <!-- 轮播 -->
     <van-swipe class="home-swipe" :show-indicators="false" :autoplay="3000">
       <van-swipe-item v-for="(item, index) in images" :key="index">
@@ -8,7 +9,7 @@
     </van-swipe>
 
     <div class="home-middle">
-      <div class="middle-left" @click="gotoPage('reservation')" >
+      <div class="middle-left" @click="gotoPage('reservation')">
         <img class="icon" src="../assets/icon1.png" alt="" />
         <div>
           <p>预约挂号</p>
@@ -91,6 +92,7 @@ export default {
       images: [banner1, banner3],
     };
   },
+  mounted() {},
   methods: {
     gotoPage(name) {
       this.$router.push({ name });
